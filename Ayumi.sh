@@ -17,12 +17,14 @@ PRETO='\033[01;30m'
 function norton(){
 
 
-echo -e "${ROSA}          █████╗ ██╗   ██╗██╗   ██╗███╗   ███╗██╗${ROSA}"
-echo -e "${RED}         ██╔══██╗╚██╗ ██╔╝██║   ██║████╗ ████║██║${RED}"
-echo -e "${AMARELO}	 ███████║ ╚████╔╝ ██║   ██║██╔████╔██║██║${AMARELO}"
-echo -e "${BRANCO} 	 ██╔══██║  ╚██╔╝  ██║   ██║██║╚██╔╝██║██║${BRANCO}"
-echo -e "${VERDE} 	 ██║  ██║   ██║   ╚██████╔╝██║ ╚═╝ ██║██║${VERDE}"
-echo -e "${CIANO} 	 ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝${CIANO}"
+echo -e "${ROSA}
+         █████╗ ██╗   ██╗██╗   ██╗███╗   ███╗██╗
+        ██╔══██╗╚██╗ ██╔╝██║   ██║████╗ ████║██║
+        ███████║ ╚████╔╝ ██║   ██║██╔████╔██║██║
+        ██╔══██║  ╚██╔╝  ██║   ██║██║╚██╔╝██║██║
+        ██║  ██║   ██║   ╚██████╔╝██║ ╚═╝ ██║██║
+        ╚═╝  ╚═╝   ╚═╝    ╚═════╝ ╚═╝     ╚═╝╚═╝
+${CIANO}"
 }
 
 
@@ -38,6 +40,10 @@ function warning(){
 		exit 1
 }
 
+if [[ "$USER" != "root" ]]; then
+    echo -e "${RED}É NECESSARIO EXECUTAR COMO ROOT!${RED}"
+    exit
+fi
 if [[ "$#" != "2" ]]; then
 	echo ""
 	echo -e "${RED}Numero de argumentos incorreto.${BRANCO}"
